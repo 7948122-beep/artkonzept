@@ -4,711 +4,228 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artkonzept – Karpov Baukonzept</title>
-  <meta name="description" content="Karpov Baukonzept – Container- und Modulbau, Metallkonstruktionen, Bau und Renovation im Kanton Zürich." />
-
-  <style>
-    :root {
-      --bg-body: #f4eee2;      /* тёплый кремовый общий фон */
-      --bg-main: #ffffff;      /* белый фон основного контента */
-      --accent: #111111;       /* основной текст/акцент */
-      --accent-light: #555555;
-      --border-soft: #dddddd;
-      --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.08);
-      --max-width: 1100px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-body);
-      color: var(--accent);
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      background: var(--bg-main);
-      min-height: 100vh;
-      box-shadow: var(--shadow-soft);
-    }
-
-    /* HEADER / NAV */
-    header {
-      border-bottom: 1px solid var(--border-soft);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(6px);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1.5rem;
-      gap: 1rem;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    .nav-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid var(--border-soft);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .nav-right a {
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav-right a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.2s ease-out;
-    }
-
-    .nav-right a:hover::after {
-      width: 100%;
-    }
-
-    .nav-burger {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-
-    .nav-burger span {
-      width: 20px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    @media (max-width: 768px) {
-      .nav-right {
-        display: none;
-      }
-
-      .nav-burger {
-        display: flex;
-      }
-
-      .nav-mobile {
-        display: none;
-        flex-direction: column;
-        padding: 0.75rem 1.5rem 1rem;
-        border-top: 1px solid var(--border-soft);
-        background: #ffffff;
-      }
-
-      .nav-mobile a {
-        padding: 0.35rem 0;
-        font-size: 0.95rem;
-      }
-
-      .nav-mobile.show {
-        display: flex;
-      }
-    }
-
-    /* GENERIC SECTION STYLES */
-    main {
-      padding: 0 1.5rem 2.5rem;
-    }
-
-    section {
-      padding: 2.5rem 0 1.5rem;
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-      padding-bottom: 3rem;
-    }
-
-    .section-heading {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-heading h2 {
-      font-size: 1.6rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .section-heading p {
-      margin-top: 0.35rem;
-      color: var(--accent-light);
-      font-size: 0.95rem;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: center;
-      padding-top: 2rem;
-    }
-
-    .hero-text h1 {
-      font-size: 2.1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-text .subtitle {
-      color: var(--accent-light);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-text p {
-      margin-bottom: 1.25rem;
-      font-size: 0.98rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.2s ease-out, color 0.2s ease-out;
-    }
-
-    .btn.outline {
-      background: #fff;
-      color: #111;
-    }
-
-    .btn:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    .btn.outline:hover {
-      background: #111;
-      color: #fff;
-    }
-
-    .hero-image {
-      border-radius: 18px;
-      border: 1px solid var(--border-soft);
-      background: #fafafa;
-      padding: 1rem;
-      min-height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--accent-light);
-    }
-
-    .hero-image img {
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-image {
-        order: -1;
-      }
-    }
-
-    /* GRID / CARDS */
-
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.75rem;
-    }
-
-    .models-grid,
-    .services-grid,
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    @media (max-width: 900px) {
-      .models-grid,
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .models-grid,
-      .services-grid,
-      .gallery-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      main {
-        padding: 0 1rem 2rem;
-      }
-
-      .hero-text h1 {
-        font-size: 1.6rem;
-      }
-    }
-
-    .card {
-      border: 1px solid var(--border-soft);
-      border-radius: 15px;
-      padding: 0.9rem 0.9rem 1rem;
-      background: #fff;
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--accent-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-    }
-
-    .thumb {
-      border-radius: 10px;
-      border: 1px dashed var(--border-soft);
-      padding: 0.4rem;
-      font-size: 0.8rem;
-      text-align: center;
-      color: var(--accent-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .small-note {
-      font-size: 0.8rem;
-      color: var(--accent-light);
-      margin-top: 0.4rem;
-    }
-
-    /* CONTACT / FOOTER */
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2rem;
-    }
-
-    @media (max-width: 900px) {
-      .contact-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .contact-block h3 {
-      margin-bottom: 0.4rem;
-      font-size: 1.1rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      margin-top: 0.4rem;
-      font-size: 0.95rem;
-    }
-
-    .contact-list li + li {
-      margin-top: 0.25rem;
-    }
-
-    .email-box {
-      margin-top: 1rem;
-      padding: 0.9rem 1rem;
-      border-radius: 12px;
-      border: 1px dashed var(--border-soft);
-      background: #fafafa;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      border-top: 1px solid var(--border-soft);
-      padding: 0.9rem 1.5rem;
-      font-size: 0.8rem;
-      color: var(--accent-light);
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      header .nav {
-        padding-inline: 1rem;
-      }
-
-      footer {
-        padding-inline: 1rem;
-      }
-    }
-  </style>
+  <meta
+    name="description"
+    content="Karpov Baukonzept – Container- und Modulbau, Metallkonstruktionen, Bau und Renovation im Kanton Zürich."
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body id="top">
+  <header>
+    <div class="container navbar">
+      <a href="#top" class="logo-wrap">
+        <img src="img/logo-karpov-baukonzept.png" alt="Logo Karpov Baukonzept" />
+        <span class="logo-text">KARPOV&nbsp;BAUKONZEPT</span>
+      </a>
 
-<body>
-  <div class="page">
-    <header>
-      <nav class="nav">
-        <div class="nav-left">
-          <div class="nav-logo">
-            <!-- сюда можно загрузить логотип-круг: images/logo-round.png -->
-            <span>KB</span>
-          </div>
-          <span>Karpov Baukonzept</span>
-        </div>
-        <div class="nav-right">
-          <a href="#start">Start</a>
-          <a href="#container">Container & Modulbau</a>
-          <a href="#bau">Bau & Renovation</a>
-          <a href="#referenzen">Referenzen</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
-        <div class="nav-burger" onclick="toggleNav()">
-          <span></span><span></span><span></span>
-        </div>
+      <nav>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#containerbau">Container &amp; Modulbau</a></li>
+          <li><a href="#renovation">Renovation</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
       </nav>
-      <div id="nav-mobile" class="nav-mobile">
-        <a href="#start" onclick="toggleNav()">Start</a>
-        <a href="#container" onclick="toggleNav()">Container & Modulbau</a>
-        <a href="#bau" onclick="toggleNav()">Bau & Renovation</a>
-        <a href="#referenzen" onclick="toggleNav()">Referenzen</a>
-        <a href="#kontakt" onclick="toggleNav()">Kontakt</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-badge">
+            <span>Planung &amp; Ausführung</span>
+          </div>
+
+          <h1 class="hero-title">
+            Präzise Baukonzepte für
+            <span>Container, Modulbau &amp; Renovation</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Ingenieur- und Bauleistungen von einem Ansprechpartner – von der Idee
+            bis zur fertigen Ausführung. Schwerpunkt im Kanton Zürich und Umgebung.
+          </p>
+
+          <ul class="hero-list">
+            <li>Projektierung und Planung von Container- und Modulbauten</li>
+            <li>Metallkonstruktionen, Hallen, Unterstände, Gartenhäuser</li>
+            <li>Innenausbau, Umbau und Renovation von Wohn- und Gewerberäumen</li>
+          </ul>
+
+          <div class="btn-row">
+            <a href="#kontakt" class="btn btn-primary">
+              Gratis Beratung anfragen
+            </a>
+            <a href="#leistungen" class="btn btn-ghost">
+              Leistungen ansehen
+            </a>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <!-- HERO / START -->
-      <section id="start">
-        <div class="hero">
-          <div class="hero-text">
-            <h1>Artkonzept – Bau&nbsp;und Modulbau</h1>
-            <div class="subtitle">Container · Modulhäuser · Metallbau · Renovation</div>
-            <p>
-              Karpov Baukonzept plant und baut individuelle Lösungen aus Metall und Holz:
-              Modulhäuser, Containerbüros, Garagen, Vordächer und präzise Ausführungen im Innen- und Aussenbereich.
-            </p>
-            <p>
-              Wir begleiten Sie von der ersten Skizze bis zur fertigen Ausführung – pragmatisch, transparent
-              und mit viel Liebe zum Detail.
-            </p>
-            <div class="hero-actions">
-              <a class="btn" href="#kontakt">Projekt anfragen</a>
-              <a class="btn outline" href="#container">Container & Modulbau</a>
-            </div>
-          </div>
-          <div class="hero-image">
-            <!-- сюда можно позже поставить красивый рендер / фото -->
-            <div>
-              <p><strong>Platzhalter für Titelbild.</strong></p>
-              <p>Hier kann ein Foto eines Modulhauses, Containers oder einer Metallkonstruktion eingefügt werden.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTAINER & MODULBAU -->
-      <section id="container">
-        <div class="section-heading">
-          <h2>Container &amp; Modulbau</h2>
-          <p>Gartenbüros, Werkstattcontainer, modulare Tiny Houses und individuelle Lösungen.</p>
-        </div>
-
-        <div class="two-column">
-          <div>
-            <p>
-              Wir entwickeln Container- und Modulhäuser nach Ihren Bedürfnissen: als Büro, Atelier, Lager,
-              Hobbyraum oder kleine Wohnung. Tragende Metallrahmen, gedämmte Wände, hochwertige Fenster und
-              eine saubere Ausführung der Details stehen im Mittelpunkt.
-            </p>
-            <p class="small-note">
-              Tipp: Für jedes Projekt können Grundriss und 3D-Ansichten vorbereitet werden. Unten sehen Sie
-              Beispiel-Module, die Sie später frei ergänzen können.
-            </p>
-          </div>
-          <div>
-            <div class="card">
-              <h3>Modelle / Projekte</h3>
-              <p>Hier können Sie nach und nach Ihre realisierten oder geplanten Modelle eintragen.</p>
-              <div class="small-note">
-                Jede Karte unten: Name der Moduls, kurze Beschreibung, Platz für Grundriss (PDF/JPG)
-                und Perspektivansicht.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="models-grid" style="margin-top:1.5rem;">
-          <!-- Modell 1 -->
-          <article class="card">
-            <h3>Modul 10' Gartenbüro</h3>
-            <p>Kompaktes Büro im Garten mit Dämmung, Elektroinstallation und grosser Fensterfront.</p>
-            <div class="tag-row">
-              <span class="tag">Ca. 10'</span>
-              <span class="tag">Gedämmt</span>
-              <span class="tag">Holz- oder Metallfassade</span>
-            </div>
-            <div class="thumb">Grundriss – Platzhalter (Bild / PDF-Link)</div>
-            <div class="thumb">Perspektive – Platzhalter (Render / Foto)</div>
-          </article>
-
-          <!-- Modell 2 -->
-          <article class="card">
-            <h3>Modul 20' Werkstatt</h3>
-            <p>Robuster Werkstattcontainer mit Regalen, Werkbank und optionalem Vordach.</p>
-            <div class="tag-row">
-              <span class="tag">Ca. 20'</span>
-              <span class="tag">Werkstatt / Lager</span>
-            </div>
-            <div class="thumb">Grundriss – Platzhalter</div>
-            <div class="thumb">Perspektive – Platzhalter</div>
-          </article>
-
-          <!-- Modell 3 -->
-          <article class="card">
-            <h3>Modulhaus 2-geschossig</h3>
-            <p>Kleine modulare Wohnlösung auf zwei Ebenen mit Terrasse.</p>
-            <div class="tag-row">
-              <span class="tag">Wohnmodul</span>
-              <span class="tag>Individuelle Planung</span>
-            </div>
-            <div class="thumb">Grundriss – Platzhalter</div>
-            <div class="thumb">Perspektive – Platzhalter</div>
-          </article>
-        </div>
-      </section>
-
-      <!-- BAU & RENOVATION -->
-      <section id="bau">
-        <div class="section-heading">
-          <h2>Bau &amp; Renovation</h2>
-          <p>Begleitung von kleinen Projekten bis zu kompletten Umbauten.</p>
-        </div>
-
-        <p>
-          Wir unterstützen Privatkunden und kleine Unternehmen bei präzisen Bau- und Renovationsarbeiten.
-          Lieben Sie klare Strukturen, Metall, Sichtbeton und praktische Lösungen? Dann sind Sie hier richtig.
+    <!-- LEISTUNGEN -->
+    <section id="leistungen">
+      <div class="container">
+        <h2 class="section-title">Leistungen im Überblick</h2>
+        <p class="section-subtitle">
+          Karpov Baukonzept verbindet Ingenieurwissen mit praktischer Bauerfahrung.
+          Wir planen, organisieren und begleiten Ihr Projekt bis zur Umsetzung.
         </p>
 
-        <div class="services-grid" style="margin-top:1.5rem;">
-          <!-- Покраска -->
+        <div class="cards">
           <article class="card">
-            <h3>Innen- & Aussenmalerei</h3>
-            <p>Vorbereitung der Untergründe, Spachteln, Schleifen und präzise Beschichtung.</p>
-            <div class="thumb">Foto-Beispiele – Platzhalter (Malerarbeiten)</div>
+            <h3>Container &amp; Modulbau</h3>
+            <p>
+              Planung von Bürocontainern, Gartenbüros, Werkstatt- und Lagercontainern.
+              Grundrisse, Statik, Ausbaukonzept und technische Details aus einer Hand.
+            </p>
           </article>
 
-          <!-- Бетонирование -->
           <article class="card">
-            <h3>Betonarbeiten</h3>
-            <p>Fundamente für Container, Stützen, kleine Bodenplatten und Betonreparaturen.</p>
-            <div class="thumb">Foto-Beispiele – Platzhalter (Betonfundamente)</div>
+            <h3>Metallkonstruktionen</h3>
+            <p>
+              Treppen, Geländer, Vordächer, Carports, Hallen- und
+              Werkstattkonstruktionen aus Stahl und Profilblech – funktional und robust.
+            </p>
           </article>
 
-          <!-- Деревянные каркасы -->
           <article class="card">
-            <h3>Holzrahmen & Unterkonstruktionen</h3>
-            <p>Montage von Holzrahmen für Wände, Decken oder Fassadenunterkonstruktionen.</p>
-            <div class="thumb">Foto-Beispiele – Platzhalter (Holzkonstruktionen)</div>
-          </article>
-
-          <!-- Металл / сварка -->
-          <article class="card">
-            <h3>Metallbau & Schweissarbeiten</h3>
-            <p>Treppen, Geländer, Rahmen, Unterkonstruktionen für Modulbau und individuelle Lösungen.</p>
-            <div class="thumb">Foto-Beispiele – Platzhalter (Metall / Schweissnähte)</div>
-          </article>
-
-          <!-- Доп. услуга 1 -->
-          <article class="card">
-            <h3>Montage & kleine Umbauten</h3>
-            <p>Montage von Türen, Trennwänden, Trockenbau-Elementen und kleineren Umbauten.</p>
-            <div class="thumb">Foto-Beispiele – Platzhalter</div>
-          </article>
-
-          <!-- Доп. услуга 2 -->
-          <article class="card">
-            <h3>Projektbegleitung</h3>
-            <p>Unterstützung bei Planung, technischen Skizzen und Koordination mit anderen Handwerkern.</p>
-            <div class="thumb">Platz für Plan / Skizzen-Beispiele</div>
+            <h3>Umbau &amp; Renovation</h3>
+            <p>
+              Sanierung von Wohnungen und kleinen Gewerbeflächen: Wände, Decken,
+              Bodenbeläge, Malerarbeiten und Anpassungen an die Nutzung.
+            </p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- REFERENZEN / GALERIE -->
-      <section id="referenzen">
-        <div class="section-heading">
-          <h2>Referenzen & Fotoarbeiten</h2>
-          <p>Ausgewählte Projekte – Container, Modulbau, Metall und Renovation.</p>
-        </div>
-
-        <p class="small-note">
-          Hier können Sie später Fotos realisierter Projekte einfügen. Jede Kachel kann ein Bild vor / nach
-          oder eine Serie von Detailfotos zeigen.
+    <!-- CONTAINERBAU -->
+    <section id="containerbau">
+      <div class="container">
+        <h2 class="section-title">Container- &amp; Modulbau</h2>
+        <p class="section-subtitle">
+          Flexible Lösungen für Arbeiten und Wohnen: vom kleinen Gartenbüro
+          bis zur modularen Erweiterung von bestehenden Gebäuden.
         </p>
 
-        <div class="gallery-grid" style="margin-top:1.2rem; grid-template-columns: repeat(3,minmax(0,1fr)); gap:1rem;">
-          <div class="thumb">Projekt 1 – Platzhalter</div>
-          <div class="thumb">Projekt 2 – Platzhalter</div>
-          <div class="thumb">Projekt 3 – Platzhalter</div>
-        </div>
-      </section>
-
-      <!-- KONTAKT + ÜBER UNS -->
-      <section id="kontakt">
-        <div class="section-heading">
-          <h2>Kontakt &amp; Über uns</h2>
-          <p>Schreiben Sie uns Ihre Idee – auch eine Skizze von Hand ist willkommen.</p>
-        </div>
-
-        <div class="contact-layout">
-          <!-- О компании -->
-          <div class="contact-block">
-            <h3>Über Karpov Baukonzept</h3>
+        <div class="cards">
+          <article class="card">
+            <h3>Gartenbüro &amp; Homeoffice</h3>
             <p>
-              Karpov Baukonzept ist ein kleines, flexibles Unternehmen im Kanton Zürich. Wir verbinden
-              Baupraxis, Metall- und Holzverarbeitung mit klaren, modernen Formen.
+              Isolierte 10- und 20-Fuss-Container, vorbereitet für Elektrik,
+              Heizung und Innenausbau – ideal als Arbeitsraum im Garten.
             </p>
-            <p class="small-note">
-              Wir sprechen Deutsch, Russisch und Ukrainisch und sind offen für pragmatische Lösungen –
-              vom kleinen Auftrag bis zum kompletten Modulhaus.
+          </article>
+
+          <article class="card">
+            <h3>Lager- &amp; Werkstattcontainer</h3>
+            <p>
+              Durchdachte Grundrisse, Regalsysteme, Werkbänke und Beleuchtung
+              für effizientes Arbeiten und sicheres Lagern.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Individuelle Lösungen</h3>
+            <p>
+              Anpassung an Ihr Grundstück, Ihre Nutzung und Ihr Budget.
+              Wir prüfen Machbarkeit, Planung und bauliche Details.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RENOVATION -->
+    <section id="renovation">
+      <div class="container">
+        <h2 class="section-title">Bau &amp; Renovation</h2>
+        <p class="section-subtitle">
+          Unterstützung bei kleinen und mittleren Bauvorhaben – besonders,
+          wenn präzise Planung und saubere Ausführung wichtig sind.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Innenausbau</h3>
+            <p>
+              Anpassung von Grundrissen, Trockenbau, Oberflächen und Technik
+              für Wohnungen, kleine Büros und Werkstätten.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Fassaden &amp; Überdachungen</h3>
+            <p>
+              Vordächer, Eingangsüberdachungen, Terrassenkonstruktionen,
+              Profilblech- und Metallfassaden für Bestandsgebäude.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Begleitung auf der Baustelle</h3>
+            <p>
+              Technische Beratung, Kontrolle der Ausführung und Koordination
+              mit Handwerkern, damit Ihr Projekt auf Kurs bleibt.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt">
+      <div class="container">
+        <h2 class="section-title">Kontakt &amp; Anfrage</h2>
+        <p class="section-subtitle">
+          Erzählen Sie kurz, was Sie planen – wir melden uns mit Rückfragen
+          oder einem Vorschlag für das weitere Vorgehen.
+        </p>
+
+        <div class="contact-box">
+          <div class="contact-main">
+            <h3>Direkter Kontakt</h3>
+            <p>
+              Artem Karpov, Bauingenieur und Inhaber von Karpov Baukonzept.
             </p>
 
-            <h3 style="margin-top:1.4rem;">Direkte Kontaktangaben</h3>
-            <ul class="contact-list">
-              <li>Inhaber: Artem Karpov</li>
-              <li>Telefon: +41 79 846 78 31</li>
-              <li>
-                E-Mail: <a href="mailto:info@artkonzept.ch">info@artkonzept.ch</a>
-              </li>
-              <li>Region: Kanton Zürich und Umgebung</li>
-            </ul>
+            <p class="contact-highlight">
+              <strong>Telefon:</strong>
+              +41&nbsp;XX&nbsp;XXX&nbsp;XX&nbsp;XX
+            </p>
+            <p class="contact-highlight">
+              <strong>E-Mail:</strong>
+              info@artkonzept.ch
+            </p>
+
+            <p class="contact-tagline">
+              Sie können Pläne, Skizzen oder Fotos Ihres Projekts
+              per E-Mail mitsenden.
+            </p>
           </div>
 
-          <!-- Обратная связь -->
-          <div>
-            <h3>Projektidee senden</h3>
+          <div class="contact-side">
             <p>
-              Sie möchten ein Modulhaus, einen Container oder eine Konstruktion realisieren?
-              Schreiben Sie uns ein paar Stichworte und senden Sie uns Skizzen oder Fotos.
+              Sitz des Unternehmens im Kanton Zürich. Einsätze sind nach
+              Absprache in der gesamten Region Zürich und angrenzenden Kantonen möglich.
             </p>
-
-            <div class="email-box">
-              <p><strong>So funktioniert es:</strong></p>
-              <ol style="margin-top:0.35rem; padding-left:1.1rem; font-size:0.9rem;">
-                <li>E-Mail an <strong>info@artkonzept.ch</strong> schreiben.</li>
-                <li>Kurze Beschreibung Ihres Projektes hinzufügen.</li>
-                <li>Skizze von Hand, Foto oder Plan als Datei anhängen.</li>
-              </ol>
-              <a class="btn outline" style="margin-top:0.7rem; display:inline-flex;"
-                 href="mailto:info@artkonzept.ch?subject=Projektanfrage%20Artkonzept">
-                E-Mail schreiben
-              </a>
-            </div>
-
-            <p class="small-note">
-              Hinweis: Für detaillierte Offerten sind Pläne, Masse oder Fotos der bestehenden Situation sehr hilfreich.
+            <p>
+              Sprachen: Deutsch, Englisch, Russisch, Ukrainisch.
             </p>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-      © <span id="year"></span> Karpov Baukonzept – Artkonzept. Alle Rechte vorbehalten.
-    </footer>
-  </div>
-
-  <script>
-    // мобильное меню
-    function toggleNav() {
-      var nav = document.getElementById("nav-mobile");
-      nav.classList.toggle("show");
-    }
-    // год в подвале
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer>
+    <div class="container">
+      © 2025 Karpov Baukonzept – Artkonzept.ch · Kanton Zürich
+    </div>
+  </footer>
 </body>
 </html>
