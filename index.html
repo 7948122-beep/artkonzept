@@ -1,148 +1,144 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <title>Karpov Baukonzept – Modulbau & Renovation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Karpov Baukonzept – Modulhäuser, Containerbau, Metall- und Holzarbeiten sowie Bau- und Renovationsarbeiten im Kanton Zürich." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- ШАПКА -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo-block">
-        <img src="img/logo-karpov-baukonzept.png" alt="Karpov Baukonzept Logo" />
-        <div>
-          <div class="logo-text-small">Karpov</div>
-          <div class="logo-text-main">Baukonzept</div>
-        </div>
-      </a>
-      <nav class="main-nav" aria-label="Hauptnavigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="container.html">Containers &amp; Modular</a></li>
-          <li><a href="renovation.html">Construction &amp; Renovation</a></li>
-          <li><a href="#kontakt">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Artkonzept – Karpov Baukonzept</title>
+    <meta
+      name="description"
+      content="Karpov Baukonzept – Container- und Modulbau, Metallkonstruktionen, Bau und Renovation im Kanton Zürich."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Шапка -->
+      <header class="header">
+        <div class="header-inner">
+          <a href="index.html" class="logo-wrap">
+            <img
+              src="img/logo-karpov-baukonzept.png"
+              alt="Karpov Baukonzept Logo"
+              class="logo-img"
+            />
+            <div class="logo-text">Karpov Baukonzept</div>
+          </a>
 
-  <!-- ОСНОВНОЙ КОНТЕНТ -->
-  <main class="page-wrapper">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-text">
-        <div>
-          <div class="hero-kicker">Karpov Baukonzept</div>
-          <h1 class="hero-title" id="hero-title">
-            Creative building<br />
-            solutions
-          </h1>
+          <nav class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="container.html">Container &amp; Modulbau</a>
+            <a href="renovation.html">Bau &amp; Renovation</a>
+            <a href="#kontakt">Kontakt</a>
+          </nav>
         </div>
-        <p class="hero-subtitle">
-          Wir planen und bauen modulare Container- und Metallkonstruktionen,
-          kleine Modulhäuser sowie präzise Bau- und Renovationsarbeiten im Kanton Zürich.
-        </p>
-      </div>
-      <div class="hero-image-wrapper" aria-hidden="true">
-        <img src="img/hero-house.jpg" alt="Modernes Modulhaus" />
-      </div>
-    </section>
+      </header>
 
-    <!-- ДВА ГЛАВНЫХ БЛОКА -->
-    <section class="main-blocks" aria-label="Leistungsbereiche">
-      <!-- Карточка 1 -->
-      <a href="container.html" class="main-card">
-        <div class="main-card-icon" aria-hidden="true">
-          <!-- Домик (SVG) -->
-          <svg viewBox="0 0 32 32">
-            <path d="M4 15.5L16 5l12 10.5" />
-            <path d="M7.5 14.5V27h17V14.5" />
-            <path d="M14 27v-7h4v7" />
-          </svg>
-        </div>
-        <div>
-          <h2 class="main-card-title">Containers &amp; Modular</h2>
-          <p class="main-card-subtitle">
-            Gartenbüros, Werkstattcontainer, modulare Tiny Houses und individuelle Lösungen.
-          </p>
-        </div>
-        <p class="main-card-subtitle">
-          View gallery &amp; example modules.
-        </p>
-      </a>
+      <!-- Основной контент -->
+      <main class="main">
+        <!-- Hero блок -->
+        <section class="hero">
+          <div>
+            <h1 class="hero-title">Creative building solutions</h1>
+            <p class="hero-sub">
+              Modulhäuser, Containerlösungen und präzise Metall- und
+              Bauarbeiten im Kanton Zürich. Von der Idee bis zum
+              fertig ausgeführten Projekt.
+            </p>
+          </div>
 
-      <!-- Карточка 2 -->
-      <a href="renovation.html" class="main-card">
-        <div class="main-card-icon" aria-hidden="true">
-          <!-- Малярный валик (SVG) -->
-          <svg viewBox="0 0 32 32">
-            <rect x="4" y="6" width="16" height="6" rx="1" />
-            <path d="M20 9h4.5a1.5 1.5 0 0 1 1.5 1.5V14" />
-            <path d="M14 12v7.5a2.5 2.5 0 0 0 2.5 2.5H18" />
-            <path d="M18 22v6" />
-          </svg>
-        </div>
-        <div>
-          <h2 class="main-card-title">Construction &amp; Renovation</h2>
-          <ul class="main-card-list">
-            <li>Innen- &amp; Aussenmalerei</li>
-            <li>Beton- &amp; Metallarbeiten</li>
-            <li>Montage &amp; Umbauten</li>
-          </ul>
-        </div>
-      </a>
-    </section>
+          <div class="hero-photo-wrap">
+            <img
+              src="img/hero-house.jpg"
+              alt="Modulares Haus – Beispielprojekt"
+              class="hero-photo"
+            />
+          </div>
+        </section>
 
-    <!-- КОНТАКТ + О НАС (ОБЩИЙ БЛОК) -->
-    <section class="contact-section" id="kontakt">
-      <div class="contact-grid">
-        <div>
-          <h2 class="contact-title">Kontakt &amp; Über uns</h2>
-          <p class="contact-subtitle">
-            Schreiben Sie uns Ihre Idee – auch eine Skizze von Hand oder ein Foto genügt,
-            um ein erstes Gespräch zu starten.
-          </p>
-          <dl class="contact-list">
-            <dt>Inhaber</dt>
-            <dd>Artem Karpov</dd>
-            <dt>Telefon</dt>
-            <dd>+41 79 846 78 31</dd>
-            <dt>E-Mail</dt>
-            <dd><a href="mailto:info@artkonzept.ch">info@artkonzept.ch</a></dd>
-            <dt>Region</dt>
-            <dd>Kanton Zürich und Umgebung</dd>
-          </dl>
-        </div>
-        <div>
-          <h3>Projektidee senden</h3>
-          <p>
-            Möchten Sie ein Modulhaus, einen Container oder eine Konstruktion realisieren?
-            Schreiben Sie uns ein paar Stichworte und senden Sie uns Skizzen oder Fotos.
-          </p>
-          <ol class="project-steps">
-            <li>E-Mail an <strong>info@artkonzept.ch</strong> schreiben.</li>
-            <li>Kurze Beschreibung Ihres Projekts hinzufügen.</li>
-            <li>Skizze von Hand, Foto oder Plan als Datei anhängen.</li>
-          </ol>
-          <p>
-            <a class="button-email" href="mailto:info@artkonzept.ch?subject=Projektanfrage">
-              E-Mail schreiben
-            </a>
-          </p>
-          <p class="contact-note">
-            Für detaillierte Offerten sind Pläne, Masse oder Fotos der bestehenden Situation sehr hilfreich.
-          </p>
-        </div>
-      </div>
+        <!-- Два основных блока -->
+        <section class="feature-grid">
+          <a href="container.html" class="feature-card">
+            <div class="feature-icon">🏠</div>
+            <h2 class="feature-title">
+              Container &amp; Modulbau
+            </h2>
+            <p class="feature-subtitle">
+              Gartenbüros, Werkstattcontainer, modulare Tiny
+              Houses und individuelle Lösungen in Stahl und Holz.
+            </p>
+            <div class="feature-link">Modelle ansehen →</div>
+          </a>
 
-      <footer class="site-footer">
+          <a href="renovation.html" class="feature-card">
+            <div class="feature-icon">🛠</div>
+            <h2 class="feature-title">
+              Bau &amp; Renovation
+            </h2>
+            <p class="feature-subtitle">
+              Malerarbeiten, Betonfundamente, Metallbau,
+              Montagearbeiten und Begleitung kleiner Umbauprojekte.
+            </p>
+            <div class="feature-link">
+              Leistungen entdecken →
+            </div>
+          </a>
+        </section>
+
+        <!-- Контакты / О нас (общий блок) -->
+        <section id="kontakt" class="contact-section">
+          <div>
+            <h2 class="contact-title">
+              Kontakt &amp; über uns
+            </h2>
+            <p class="contact-text">
+              Schreiben Sie uns Ihre Idee – auch eine Skizze von
+              Hand ist willkommen. Wir melden uns mit Fragen oder
+              einer ersten Einschätzung.
+            </p>
+
+            <div class="contact-block-title">
+              Über Karpov Baukonzept
+            </div>
+            <p class="contact-text">
+              Karpov Baukonzept ist ein kleines, flexibles
+              Unternehmen im Kanton Zürich. Wir verbinden
+              Baupraxis, Metall- und Holzverarbeitung mit klaren,
+              modernen Formen.
+            </p>
+            <p class="contact-text">
+              Wir sprechen Deutsch, Russisch und Ukrainisch und
+              sind offen für pragmatische Lösungen – vom kleinen
+              Auftrag bis zum kompletten Modulhaus.
+            </p>
+          </div>
+
+          <div>
+            <div class="contact-block-title">
+              Direkte Kontaktangaben
+            </div>
+            <ul class="contact-list">
+              <li>Inhaber: Artem Karpov</li>
+              <li>Telefon: +41 79 846 78 31</li>
+              <li>E-Mail: info@artkonzept.ch</li>
+              <li>Region: Kanton Zürich und Umgebung</li>
+            </ul>
+
+            <a
+              class="btn-email"
+              href="mailto:info@artkonzept.ch?subject=Projektanfrage"
+              >E-Mail schreiben</a
+            >
+          </div>
+        </section>
+      </main>
+
+      <!-- Подвал -->
+      <footer class="footer">
         © 2024 Karpov Baukonzept
       </footer>
-    </section>
-  </main>
-</body>
+    </div>
+  </body>
 </html>
