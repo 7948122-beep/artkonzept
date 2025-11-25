@@ -1,231 +1,148 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artkonzept – Karpov Baukonzept</title>
-  <meta
-    name="description"
-    content="Karpov Baukonzept – Container- und Modulbau, Metallkonstruktionen, Bau und Renovation im Kanton Zürich."
-  />
+  <title>Karpov Baukonzept – Modulbau & Renovation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Karpov Baukonzept – Modulhäuser, Containerbau, Metall- und Holzarbeiten sowie Bau- und Renovationsarbeiten im Kanton Zürich." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="top">
-  <header>
-    <div class="container navbar">
-      <a href="#top" class="logo-wrap">
-        <img src="img/logo-karpov-baukonzept.png" alt="Logo Karpov Baukonzept" />
-        <span class="logo-text">KARPOV&nbsp;BAUKONZEPT</span>
+<body>
+  <!-- ШАПКА -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <img src="img/logo-karpov-baukonzept.png" alt="Karpov Baukonzept Logo" />
+        <div>
+          <div class="logo-text-small">Karpov</div>
+          <div class="logo-text-main">Baukonzept</div>
+        </div>
       </a>
-
-      <nav>
+      <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
-          <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#containerbau">Container &amp; Modulbau</a></li>
-          <li><a href="#renovation">Renovation</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="container.html">Containers &amp; Modular</a></li>
+          <li><a href="renovation.html">Construction &amp; Renovation</a></li>
+          <li><a href="#kontakt">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main class="page-wrapper">
     <!-- HERO -->
-    <section class="hero" id="start">
-      <div class="container">
-        <div class="hero-inner">
-          <div class="hero-badge">
-            <span>Planung &amp; Ausführung</span>
-          </div>
-
-          <h1 class="hero-title">
-            Präzise Baukonzepte für
-            <span>Container, Modulbau &amp; Renovation</span>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <div>
+          <div class="hero-kicker">Karpov Baukonzept</div>
+          <h1 class="hero-title" id="hero-title">
+            Creative building<br />
+            solutions
           </h1>
+        </div>
+        <p class="hero-subtitle">
+          Wir planen und bauen modulare Container- und Metallkonstruktionen,
+          kleine Modulhäuser sowie präzise Bau- und Renovationsarbeiten im Kanton Zürich.
+        </p>
+      </div>
+      <div class="hero-image-wrapper" aria-hidden="true">
+        <img src="img/hero-house.jpg" alt="Modernes Modulhaus" />
+      </div>
+    </section>
 
-          <p class="hero-subtitle">
-            Ingenieur- und Bauleistungen von einem Ansprechpartner – von der Idee
-            bis zur fertigen Ausführung. Schwerpunkt im Kanton Zürich und Umgebung.
+    <!-- ДВА ГЛАВНЫХ БЛОКА -->
+    <section class="main-blocks" aria-label="Leistungsbereiche">
+      <!-- Карточка 1 -->
+      <a href="container.html" class="main-card">
+        <div class="main-card-icon" aria-hidden="true">
+          <!-- Домик (SVG) -->
+          <svg viewBox="0 0 32 32">
+            <path d="M4 15.5L16 5l12 10.5" />
+            <path d="M7.5 14.5V27h17V14.5" />
+            <path d="M14 27v-7h4v7" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="main-card-title">Containers &amp; Modular</h2>
+          <p class="main-card-subtitle">
+            Gartenbüros, Werkstattcontainer, modulare Tiny Houses und individuelle Lösungen.
           </p>
+        </div>
+        <p class="main-card-subtitle">
+          View gallery &amp; example modules.
+        </p>
+      </a>
 
-          <ul class="hero-list">
-            <li>Projektierung und Planung von Container- und Modulbauten</li>
-            <li>Metallkonstruktionen, Hallen, Unterstände, Gartenhäuser</li>
-            <li>Innenausbau, Umbau und Renovation von Wohn- und Gewerberäumen</li>
+      <!-- Карточка 2 -->
+      <a href="renovation.html" class="main-card">
+        <div class="main-card-icon" aria-hidden="true">
+          <!-- Малярный валик (SVG) -->
+          <svg viewBox="0 0 32 32">
+            <rect x="4" y="6" width="16" height="6" rx="1" />
+            <path d="M20 9h4.5a1.5 1.5 0 0 1 1.5 1.5V14" />
+            <path d="M14 12v7.5a2.5 2.5 0 0 0 2.5 2.5H18" />
+            <path d="M18 22v6" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="main-card-title">Construction &amp; Renovation</h2>
+          <ul class="main-card-list">
+            <li>Innen- &amp; Aussenmalerei</li>
+            <li>Beton- &amp; Metallarbeiten</li>
+            <li>Montage &amp; Umbauten</li>
           </ul>
+        </div>
+      </a>
+    </section>
 
-          <div class="btn-row">
-            <a href="#kontakt" class="btn btn-primary">
-              Gratis Beratung anfragen
+    <!-- КОНТАКТ + О НАС (ОБЩИЙ БЛОК) -->
+    <section class="contact-section" id="kontakt">
+      <div class="contact-grid">
+        <div>
+          <h2 class="contact-title">Kontakt &amp; Über uns</h2>
+          <p class="contact-subtitle">
+            Schreiben Sie uns Ihre Idee – auch eine Skizze von Hand oder ein Foto genügt,
+            um ein erstes Gespräch zu starten.
+          </p>
+          <dl class="contact-list">
+            <dt>Inhaber</dt>
+            <dd>Artem Karpov</dd>
+            <dt>Telefon</dt>
+            <dd>+41 79 846 78 31</dd>
+            <dt>E-Mail</dt>
+            <dd><a href="mailto:info@artkonzept.ch">info@artkonzept.ch</a></dd>
+            <dt>Region</dt>
+            <dd>Kanton Zürich und Umgebung</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Projektidee senden</h3>
+          <p>
+            Möchten Sie ein Modulhaus, einen Container oder eine Konstruktion realisieren?
+            Schreiben Sie uns ein paar Stichworte und senden Sie uns Skizzen oder Fotos.
+          </p>
+          <ol class="project-steps">
+            <li>E-Mail an <strong>info@artkonzept.ch</strong> schreiben.</li>
+            <li>Kurze Beschreibung Ihres Projekts hinzufügen.</li>
+            <li>Skizze von Hand, Foto oder Plan als Datei anhängen.</li>
+          </ol>
+          <p>
+            <a class="button-email" href="mailto:info@artkonzept.ch?subject=Projektanfrage">
+              E-Mail schreiben
             </a>
-            <a href="#leistungen" class="btn btn-ghost">
-              Leistungen ansehen
-            </a>
-          </div>
+          </p>
+          <p class="contact-note">
+            Für detaillierte Offerten sind Pläne, Masse oder Fotos der bestehenden Situation sehr hilfreich.
+          </p>
         </div>
       </div>
-    </section>
 
-    <!-- LEISTUNGEN -->
-    <section id="leistungen">
-      <div class="container">
-        <h2 class="section-title">Leistungen im Überblick</h2>
-        <p class="section-subtitle">
-          Karpov Baukonzept verbindet Ingenieurwissen mit praktischer Bauerfahrung.
-          Wir planen, organisieren und begleiten Ihr Projekt bis zur Umsetzung.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Container &amp; Modulbau</h3>
-            <p>
-              Planung von Bürocontainern, Gartenbüros, Werkstatt- und Lagercontainern.
-              Grundrisse, Statik, Ausbaukonzept und technische Details aus einer Hand.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Metallkonstruktionen</h3>
-            <p>
-              Treppen, Geländer, Vordächer, Carports, Hallen- und
-              Werkstattkonstruktionen aus Stahl und Profilblech – funktional und robust.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Umbau &amp; Renovation</h3>
-            <p>
-              Sanierung von Wohnungen und kleinen Gewerbeflächen: Wände, Decken,
-              Bodenbeläge, Malerarbeiten und Anpassungen an die Nutzung.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTAINERBAU -->
-    <section id="containerbau">
-      <div class="container">
-        <h2 class="section-title">Container- &amp; Modulbau</h2>
-        <p class="section-subtitle">
-          Flexible Lösungen für Arbeiten und Wohnen: vom kleinen Gartenbüro
-          bis zur modularen Erweiterung von bestehenden Gebäuden.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Gartenbüro &amp; Homeoffice</h3>
-            <p>
-              Isolierte 10- und 20-Fuss-Container, vorbereitet für Elektrik,
-              Heizung und Innenausbau – ideal als Arbeitsraum im Garten.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Lager- &amp; Werkstattcontainer</h3>
-            <p>
-              Durchdachte Grundrisse, Regalsysteme, Werkbänke und Beleuchtung
-              für effizientes Arbeiten und sicheres Lagern.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Individuelle Lösungen</h3>
-            <p>
-              Anpassung an Ihr Grundstück, Ihre Nutzung und Ihr Budget.
-              Wir prüfen Machbarkeit, Planung und bauliche Details.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RENOVATION -->
-    <section id="renovation">
-      <div class="container">
-        <h2 class="section-title">Bau &amp; Renovation</h2>
-        <p class="section-subtitle">
-          Unterstützung bei kleinen und mittleren Bauvorhaben – besonders,
-          wenn präzise Planung und saubere Ausführung wichtig sind.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Innenausbau</h3>
-            <p>
-              Anpassung von Grundrissen, Trockenbau, Oberflächen und Technik
-              für Wohnungen, kleine Büros und Werkstätten.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Fassaden &amp; Überdachungen</h3>
-            <p>
-              Vordächer, Eingangsüberdachungen, Terrassenkonstruktionen,
-              Profilblech- und Metallfassaden für Bestandsgebäude.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Begleitung auf der Baustelle</h3>
-            <p>
-              Technische Beratung, Kontrolle der Ausführung und Koordination
-              mit Handwerkern, damit Ihr Projekt auf Kurs bleibt.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="kontakt">
-      <div class="container">
-        <h2 class="section-title">Kontakt &amp; Anfrage</h2>
-        <p class="section-subtitle">
-          Erzählen Sie kurz, was Sie planen – wir melden uns mit Rückfragen
-          oder einem Vorschlag für das weitere Vorgehen.
-        </p>
-
-        <div class="contact-box">
-          <div class="contact-main">
-            <h3>Direkter Kontakt</h3>
-            <p>
-              Artem Karpov, Bauingenieur und Inhaber von Karpov Baukonzept.
-            </p>
-
-            <p class="contact-highlight">
-              <strong>Telefon:</strong>
-              +41&nbsp;XX&nbsp;XXX&nbsp;XX&nbsp;XX
-            </p>
-            <p class="contact-highlight">
-              <strong>E-Mail:</strong>
-              info@artkonzept.ch
-            </p>
-
-            <p class="contact-tagline">
-              Sie können Pläne, Skizzen oder Fotos Ihres Projekts
-              per E-Mail mitsenden.
-            </p>
-          </div>
-
-          <div class="contact-side">
-            <p>
-              Sitz des Unternehmens im Kanton Zürich. Einsätze sind nach
-              Absprache in der gesamten Region Zürich und angrenzenden Kantonen möglich.
-            </p>
-            <p>
-              Sprachen: Deutsch, Englisch, Russisch, Ukrainisch.
-            </p>
-          </div>
-        </div>
-      </div>
+      <footer class="site-footer">
+        © 2024 Karpov Baukonzept
+      </footer>
     </section>
   </main>
-
-  <footer>
-    <div class="container">
-      © 2025 Karpov Baukonzept – Artkonzept.ch · Kanton Zürich
-    </div>
-  </footer>
 </body>
 </html>
