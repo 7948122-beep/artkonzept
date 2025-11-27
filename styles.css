@@ -555,3 +555,68 @@ img {
   }
 }
 }
+/* ======================
+   Lightbox für Galerien
+   ====================== */
+
+.gallery img {
+  cursor: zoom-in;
+}
+
+/* Оверлей */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+/* Картинка внутри lightbox */
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Кнопки: закрыть и стрелки */
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.lightbox-close {
+  top: 16px;
+  right: 20px;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-close:focus,
+.lightbox-arrow:focus {
+  outline: none;
+}
