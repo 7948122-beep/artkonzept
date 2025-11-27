@@ -1,163 +1,183 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Container &amp; Modulbau – Artkonzept</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <header class="header">
-        <div class="header-inner">
-          <a href="index.html" class="logo-wrap">
-            <img
-              src="img/logo-karpov-baukonzept.png"
-              alt="Karpov Baukonzept Logo"
-              class="logo-img"
-            />
-            <div class="logo-text">Karpov Baukonzept</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Container &amp; Modulbau – Karpov Baukonzept</title>
+  <meta name="description" content="Modulhäuser, Bürocontainer, Werkstattcontainer und individuelle Container-Umbauten von Karpov Baukonzept im Kanton Zürich." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo-karpov-baukonzept.png" alt="Karpov Baukonzept Logo" class="site-logo" />
+        <span class="brand-text">
+          <strong>Karpov Baukonzept</strong>
+          <span>Modulbau · Metall · Holz · Bau</span>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="container.html" class="active">Container &amp; Modulbau</a>
+        <a href="renovation.html">Bau &amp; Renovation</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Заголовок раздела -->
+      <section class="section">
+        <div class="section-header">
+          <div class="section-kicker">Container &amp; Modulbau</div>
+          <h1 class="section-title">Modulhäuser &amp; Büros</h1>
+          <p class="section-lead">
+            Gartenbüros, Werkstattcontainer, modulare Tiny Houses und individuelle Lösungen.
+            Unten sehen Sie vier Beispielprojekte. Später können wir weitere Modelle ergänzen.
+          </p>
+        </div>
+
+        <!-- 4 карточки проектов -->
+        <div class="card-grid">
+          <!-- Projekt 1 -->
+          <a href="#" class="project-card">
+            <div class="card-image">
+              <img src="img/modul-1-main.jpg" alt="Langes Modulgebäude mit überdachter Frontzone" />
+            </div>
+            <div class="card-meta">Projekt 1 · Werkstatt / Lager</div>
+            <h2 class="card-title">Langes Modulgebäude mit überdachter Frontzone</h2>
+            <p class="card-tagline">
+              Längliches Modulgebäude mit gedeckter Vorzone – ideal als Werkstatt, Lager
+              oder kleine Produktionsfläche mit geschütztem Aussenbereich.
+            </p>
           </a>
 
-          <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="container.html" class="active"
-              >Container &amp; Modulbau</a
-            >
-            <a href="renovation.html">Bau &amp; Renovation</a>
-            <a href="#kontakt">Kontakt</a>
-          </nav>
+          <!-- Projekt 2 -->
+          <a href="#" class="project-card">
+            <div class="card-image">
+              <img src="img/modul-2-main.jpg" alt="Werkstattcontainer mit oberem Technik- bzw. Büroraum" />
+            </div>
+            <div class="card-meta">Projekt 2 · Werkstattcontainer</div>
+            <h2 class="card-title">Werkstattcontainer mit oberem Technik- bzw. Büroraum</h2>
+            <p class="card-tagline">
+              Kombination aus überdachter Werkhalle und Obergeschoss für Technik oder kleines Büro.
+              Ideal für Servicebetriebe und Fahrzeugpflege.
+            </p>
+          </a>
+
+          <!-- Projekt 3 -->
+          <a href="#" class="project-card">
+            <div class="card-image">
+              <img src="img/modul-3-main.jpg" alt="Zweigeschossiges Büro- und Aufenthaltsmodul" />
+            </div>
+            <div class="card-meta">Projekt 3 · Büro &amp; Aufenthaltsräume</div>
+            <h2 class="card-title">Zweigeschossiges Büro- und Aufenthaltsmodul</h2>
+            <p class="card-tagline">
+              Kompaktes zweigeschossiges Modulgebäude für Büro- und Sozialräume.
+              Ideal als temporäres Verwaltungsgebäude oder Erweiterung eines Betriebsareals.
+            </p>
+          </a>
+
+          <!-- Projekt 4 -->
+          <a href="#" class="project-card">
+            <div class="card-image">
+              <img src="img/modul-4-main.jpg" alt="Modulares Büro mit Außentreppe und Nebentrakt" />
+            </div>
+            <div class="card-meta">Projekt 4 · Büro &amp; Empfang</div>
+            <h2 class="card-title">Modulares Büro mit Außentreppe und Nebentrakt</h2>
+            <p class="card-tagline">
+              Flexibles Modulgebäude mit Aussentreppe und separatem Nebentrakt.
+              Geeignet als Büro, Empfang oder kleine Werkstatt mit Lagerfläche.
+            </p>
+          </a>
         </div>
-      </header>
+      </section>
 
-      <main class="main">
-        <section>
-          <h1 class="section-title">Container &amp; Modulbau</h1>
-          <p class="section-subtitle">
-            Gartenbüros, Werkstattcontainer, modulare Tiny Houses
-            und individuelle Lösungen.
+      <!-- Категории-плейсхолдеры на будущее -->
+      <section class="section">
+        <div class="section-header">
+          <div class="section-kicker">Weitere Kategorien</div>
+          <h2 class="section-title">Container-Umbau &amp; Kioske</h2>
+          <p class="section-lead">
+            Diese Bereiche können wir später mit weiteren Projekten füllen –
+            z.B. Umbau von Seecontainern, Verkaufsstände, Kioske oder Speziallösungen.
           </p>
-          <p class="section-subtitle" style="margin-bottom: 1.2rem">
-            Wir entwickeln Container- und Modulhäuser nach Ihren
-            Bedürfnissen: als Büro, Atelier, Lager, Hobbyraum oder
-            kleine Wohnung. Tragende Metallrahmen, gedämmte Wände,
-            hochwertige Fenster und eine saubere Ausführung der
-            Details stehen im Mittelpunkt.
-          </p>
-          <p class="section-subtitle">
-            Tipp: Für jedes Projekt können Grundriss und
-            3D-Ansichten vorbereitet werden. Unten sehen Sie
-            Beispiel-Module, die Sie später mit eigenen Modellen
-            ergänzen können.
-          </p>
-        </section>
+        </div>
 
-        <section class="card-grid">
-          <article class="card">
-            <h2 class="card-title">
-              Modul 10’ Gartenbüro
-            </h2>
-            <p class="card-text">
-              Kompaktes Büro im Garten mit Dämmung,
-              Elektroinstallation und grosser Fensterfront.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Ca. 10’</span>
-              <span class="chip">Gedämmt</span>
-              <span class="chip">Holz- oder Metallfassade</span>
-            </div>
-            <div class="card-button">
-              Grundriss – Platzhalter (Bild / PDF-Link)
-            </div>
-            <div class="card-button">
-              Perspektive – Platzhalter (Render / Foto)
-            </div>
-          </article>
-
-          <article class="card">
-            <h2 class="card-title">
-              Modul 20’ Werkstatt
-            </h2>
-            <p class="card-text">
-              Robuster Werkstattcontainer mit Regalen,
-              Werkbank und optionalem Vordach.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Ca. 20’</span>
-              <span class="chip">Werkstatt / Lager</span>
-            </div>
-            <div class="card-button">
-              Grundriss – Platzhalter
-            </div>
-            <div class="card-button">
-              Perspektive – Platzhalter
-            </div>
-          </article>
-
-          <article class="card">
-            <h2 class="card-title">
-              Modulhaus 2-geschossig
-            </h2>
-            <p class="card-text">
-              Kleine modulare Wohnlösung auf zwei Ebenen mit
-              Terrasse.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Wohnmodul</span>
-            </div>
-            <div class="card-button">
-              Grundriss – Platzhalter
-            </div>
-            <div class="card-button">
-              Perspektive – Platzhalter
-            </div>
-          </article>
-        </section>
-
-        <!-- Контакты / О нас -->
-        <section id="kontakt" class="contact-section">
-          <div>
-            <h2 class="contact-title">
-              Kontakt &amp; über uns
-            </h2>
-            <p class="contact-text">
-              Schreiben Sie uns Ihre Idee – auch eine Skizze von
-              Hand ist willkommen.
-            </p>
-
-            <div class="contact-block-title">
-              Über Karpov Baukonzept
-            </div>
-            <p class="contact-text">
-              Modulare Lösungen für Büro, Werkstatt oder Wohnen –
-              massgeschneidert für Ihr Grundstück.
+        <div class="card-grid two">
+          <div class="service-card">
+            <div class="card-meta">Kategorie</div>
+            <h3 class="card-title">Umbau von Seecontainern</h3>
+            <p class="card-tagline">
+              Container-Umbauten zu Lagern, kleinen Werkstätten oder Technikräumen.
+              Inhalte werden später ergänzt.
             </p>
           </div>
 
+          <div class="service-card">
+            <div class="card-meta">Kategorie</div>
+            <h3 class="card-title">Kioske &amp; Verkaufsstände</h3>
+            <p class="card-tagline">
+              Kompakte Einheiten für Verkauf, Street-Food oder Service.
+              Platzhalter für zukünftige Projekte.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- КОНТАКТЫ + О НАС (тот же блок, что на главной) -->
+      <section id="kontakt" class="footer-section">
+        <div class="footer-grid">
           <div>
-            <div class="contact-block-title">
-              Direkte Kontaktangaben
-            </div>
+            <h2 class="footer-title">Kontakt &amp; Projektidee</h2>
+            <p class="footer-subtitle">
+              Haben Sie Interesse an einem ähnlichen Modulgebäude?
+            </p>
+            <p class="footer-text">
+              Schicken Sie uns eine kurze Beschreibung (Nutzung, Grösse, Budget)
+              und gerne auch ein paar Fotos vom Standort. Wir schlagen Ihnen eine
+              passende Modulbau-Lösung vor.
+            </p>
+            <a class="btn-email" href="mailto:info@artkonzept.ch?subject=Container%20%26%20Modulbau">
+              E-MAIL SCHREIBEN
+            </a>
+          </div>
+
+          <div>
+            <h3 class="section-title" style="font-size:18px; letter-spacing:0.12em;">Über Karpov Baukonzept</h3>
+            <p class="footer-text" style="margin-bottom:10px;">
+              Karpov Baukonzept verbindet Metallbau, Holzbau und Modulbau.
+              Viele der gezeigten Projekte wurden komplett geplant, gefertigt
+              und montiert – aus einer Hand.
+            </p>
             <ul class="contact-list">
               <li>Inhaber: Artem Karpov</li>
-              <li>Telefon: +41 79 846 78 31</li>
-              <li>E-Mail: info@artkonzept.ch</li>
+              <li>Telefon: <a href="tel:+41798467831">+41 79 846 78 31</a></li>
+              <li>E-Mail: <a href="mailto:info@artkonzept.ch">info@artkonzept.ch</a></li>
+              <li>Region: Kanton Zürich und Umgebung</li>
             </ul>
-            <a
-              class="btn-email"
-              href="mailto:info@artkonzept.ch?subject=Container%20/Modulbau"
-              >E-Mail schreiben</a
-            >
           </div>
-        </section>
-      </main>
+        </div>
 
-      <footer class="footer">
-        © 2024 Karpov Baukonzept
-      </footer>
-    </div>
-  </body>
+        <div class="footer-bottom">
+          © <span id="year"></span> Karpov Baukonzept
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const logo = document.querySelector('.site-logo');
+    if (logo) {
+      logo.addEventListener('click', () => {
+        logo.classList.toggle('logo-zoom');
+      });
+    }
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
