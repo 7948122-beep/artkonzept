@@ -446,4 +446,112 @@ img {
   .page-wrap {
     padding-inline: 14px;
   }
+/* =========================
+   ПРОЕКТ-СТРАНИЦЫ (ГАЛЕРЕЯ + ВИДЕО)
+   ========================= */
+
+.back-link {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.back-link a {
+  text-decoration: underline;
+  color: #4b5563;
+}
+
+.back-link a:hover {
+  color: #111827;
+}
+
+.project-header h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+.project-meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.project-text {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+/* Галерея картинок */
+
+.gallery {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery img {
+  border-radius: 16px;
+  height: 210px;
+  object-fit: cover;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+}
+
+/* Видео (YouTube-вставка) */
+
+.video-wrap {
+  margin-top: 18px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Чтобы вся карточка была кликабельной */
+
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link:hover .card {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Адаптив для галереи */
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gallery img {
+    height: 220px;
+  }
+}
 }
