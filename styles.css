@@ -1,372 +1,449 @@
 :root {
-  --bg-body: #f4eee2;
-  --bg-main: #ffffff;
-  --accent: #111111;
-  --accent-soft: #444444;
-  --accent-light: #777777;
+  --bg-body: #f4eee2;        /* тёплый кремовый фон */
+  --bg-main: #ffffff;        /* белый фон блоков */
+  --text-main: #111111;
+  --text-muted: #555555;
+  --accent: #222222;
   --border-soft: #dddddd;
-  --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.08);
   --max-width: 1100px;
+  --radius-card: 18px;
 }
 
-/* Сброс */
-*,
-*::before,
-*::after {
+/* Сброс/базовые */
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg-body);
-  color: var(--accent);
+  color: var(--text-main);
   line-height: 1.5;
 }
 
-/* Обёртка страницы */
-
-.page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* Шапка */
+/* Общий контейнер */
 
-.header {
-  background: var(--bg-body);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.header-inner {
+.page-wrap {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.2rem 1.5rem;
+  padding: 18px 18px 40px;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 24px;
+  margin-bottom: 28px;
 }
 
-.logo-wrap {
+.logo-link {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-}
-
-.logo-img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--accent-soft);
-}
-
-.nav {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.nav a {
+  gap: 10px;
   text-decoration: none;
-  color: var(--accent-soft);
+  color: inherit;
+}
+
+.site-logo {
+  width: 90px;              /* чуть крупнее */
+  cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+}
+
+/* Увеличение логотипа по клику */
+.site-logo.logo-zoom {
+  transform: scale(2.7);
+  transform-origin: top left;
+  cursor: zoom-out;
+  z-index: 999;
+}
+
+/* Чтобы увеличенный логотип не обрезался */
+.site-header {
+  overflow: visible;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.brand-text strong {
+  font-size: 14px;
+}
+
+/* Навигация */
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-main);
   position: relative;
-  padding-bottom: 0.2rem;
+  padding-bottom: 4px;
 }
 
-.nav a:hover,
-.nav a.active {
-  color: var(--accent);
-}
-
-.nav a.active::after,
-.nav a:hover::after {
+.main-nav a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: var(--accent);
+  transition: width 0.2s ease;
 }
 
-/* Основной контейнер */
-
-.main {
-  flex: 1;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem 1.5rem 3rem;
+.main-nav a:hover::after {
+  width: 100%;
 }
 
-/* Hero на главной */
+.main-nav a.active {
+  font-weight: 600;
+}
+
+/* ---------- HERO (главный экран) ---------- */
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-  gap: 2.5rem;
-  align-items: center;
-  margin-bottom: 3rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: 40px;
 }
 
-.hero-title {
-  font-size: clamp(2.3rem, 3.3vw, 2.9rem);
-  text-transform: uppercase;
+.hero-text h1 {
+  font-size: 38px;
   letter-spacing: 0.06em;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
-.hero-sub {
-  font-size: 0.95rem;
-  color: var(--accent-light);
-  max-width: 26rem;
+.hero-text h1 span {
+  display: block;
 }
 
-.hero-photo-wrap {
-  border-radius: 16px;
+.hero-subtitle {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.hero-description {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.hero-image {
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+  background: #000;
 }
 
-.hero-photo {
+.hero-image img {
   width: 100%;
-  display: block;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Блок двух основных секций на главной */
+/* ---------- Два больших блока на главной ---------- */
 
-.feature-grid {
+.main-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
-.feature-card {
+.big-card {
   background: var(--bg-main);
-  border-radius: 16px;
-  padding: 1.9rem 1.7rem;
+  border-radius: var(--radius-card);
+  padding: 26px 24px 24px;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.03);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    border-color 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.feature-card:hover {
+.big-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
-.feature-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.big-card-icon {
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
-.feature-title {
-  font-size: 1.15rem;
+.big-card-title {
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 10px;
 }
 
-.feature-subtitle {
-  font-size: 0.95rem;
-  color: var(--accent-light);
+.big-card-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
 }
 
-.feature-link {
-  display: inline-block;
-  margin-top: 1.1rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* Общие заголовки секций */
-
-.section-title {
-  font-size: 1.6rem;
+.big-card-link {
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 0.6rem;
 }
 
-.section-subtitle {
-  font-size: 0.95rem;
-  color: var(--accent-light);
-  margin-bottom: 1.6rem;
-  max-width: 40rem;
+/* ---------- Карточки (внутренние страницы) ---------- */
+
+.section {
+  margin-bottom: 40px;
 }
 
-/* Сетка карточек (страницы Container / Renovation) */
+.section-header {
+  margin-bottom: 18px;
+}
+
+.section-kicker {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  margin-bottom: 6px;
+}
+
+.section-lead {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Сетка карточек */
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-  margin-bottom: 2.5rem;
+  gap: 18px;
 }
 
-.card {
+.card-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-card,
+.project-card {
   background: var(--bg-main);
-  border-radius: 16px;
-  padding: 1.5rem 1.4rem;
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-card);
+  padding: 18px 18px 16px;
   border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 10px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.service-card:hover,
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  border-radius: 14px;
+  overflow: hidden;
+  max-height: 190px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-title {
+  font-size: 16px;
   font-weight: 600;
-  font-size: 1rem;
 }
 
-.card-text {
-  font-size: 0.9rem;
-  color: var(--accent-light);
+.card-tagline {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-.chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-.chip {
-  border-radius: 999px;
-  border: 1px solid var(--border-soft);
-  font-size: 0.78rem;
-  padding: 0.2rem 0.7rem;
-  background: #faf6ef;
-}
-
-.card-button {
-  margin-top: auto;
-  font-size: 0.8rem;
+.card-meta {
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: 999px;
-  border: 1px solid var(--border-soft);
-  padding: 0.45rem 0.9rem;
-  background: #faf6ef;
-  text-align: center;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
 }
 
-/* Контакты / о нас (общий блок для всех страниц) */
+/* ---------- Блок "Контакты & О нас" ---------- */
 
-.contact-section {
-  margin-top: 2.5rem;
-  padding-top: 2.3rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+.footer-section {
+  margin-top: 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 18px;
 }
 
-.contact-title {
-  font-size: 1.4rem;
+.footer-title {
+  font-size: 22px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.7rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 10px;
 }
 
-.contact-block-title {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
+.footer-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
 }
 
-.contact-text {
-  font-size: 0.95rem;
-  color: var(--accent-light);
-  margin-bottom: 0.8rem;
+.footer-text {
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
 .contact-list {
-  font-size: 0.95rem;
+  list-style: none;
+  font-size: 14px;
 }
 
 .contact-list li + li {
-  margin-top: 0.25rem;
+  margin-top: 4px;
 }
+
+.contact-list a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+}
+
+.contact-list a:hover {
+  border-bottom-style: solid;
+}
+
+/* Кнопка "Написать e-mail" */
 
 .btn-email {
-  display: inline-block;
-  margin-top: 0.9rem;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  margin-top: 8px;
   border-radius: 999px;
-  padding: 0.55rem 1.4rem;
-  border: 1px solid var(--accent);
-  background: transparent;
+  border: none;
+  background: #111111;
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
   text-decoration: none;
-  color: var(--accent);
+  transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease;
 }
 
-/* Подвал */
-
-.footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem 2rem;
-  font-size: 0.8rem;
-  color: var(--accent-light);
+.btn-email:hover {
+  background: #000000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
 }
 
-/* Мобильная адаптация */
+/* Нижняя полоска */
+
+.footer-bottom {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- ADAPTIVE ---------- */
 
 @media (max-width: 900px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    row-gap: 0.4rem;
-  }
-
   .hero {
     grid-template-columns: 1fr;
   }
 
-  .hero-photo-wrap {
+  .hero-image {
     order: -1;
+    max-height: 340px;
   }
 
-  .feature-grid {
+  .main-grid {
     grid-template-columns: 1fr;
   }
 
   .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .card-grid,
+  .card-grid.two {
     grid-template-columns: 1fr;
   }
 
-  .contact-section {
-    grid-template-columns: 1fr;
+  .page-wrap {
+    padding-inline: 14px;
   }
 }
