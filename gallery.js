@@ -1,10 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ----- УВЕЛИЧЕНИЕ ЛОГО -----
+  const logo = document.querySelector('.site-logo');
+  const logoLink = document.querySelector('.logo-link');
+
+  if (logo && logoLink) {
+    logoLink.addEventListener('click', (e) => {
+      // не переходим на главную
+      e.preventDefault();
+      logo.classList.toggle('logo-zoom');
+    });
+  }
+
+  // ----- LIGHTBOX ДЛЯ ГАЛЕРЕЙ -----
   const images = Array.from(document.querySelectorAll('.gallery img'));
   if (!images.length) return;
 
   let currentIndex = 0;
 
-  // создаём lightbox-оверлей
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
   lightbox.innerHTML = `
@@ -42,22 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     showImage(currentIndex);
   }
 
-  // клики по миниатюрам
   images.forEach((img, index) => {
     img.addEventListener('click', () => openLightbox(index));
   });
 
-  // кнопки
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', () => changeImage(1));
   prevBtn.addEventListener('click', () => changeImage(-1));
 
-  // закрытие по клику по фону
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // клавиатура (на компьютере)
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('is-open')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -65,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') changeImage(-1);
   });
 
-  // свайпы (на телефоне)
   let startX = 0;
   lightbox.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
@@ -75,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const diffX = e.changedTouches[0].clientX - startX;
     if (Math.abs(diffX) > 50) {
       if (diffX < 0) {
-        changeImage(1);  // свайп влево → следующее
+        changeImage(1);
       } else {
-        changeImage(-1); // свайп вправо → предыдущее
+        changeImage(-1);
       }
     }
   });
