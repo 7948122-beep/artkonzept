@@ -363,6 +363,24 @@ img {
 .contact-list a:hover {
   border-bottom-style: solid;
 }
+.contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #128C7E;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(18, 140, 126, 0.7);
+}
+
+.contact-whatsapp:hover {
+  border-bottom-style: solid;
+}
+
+.contact-whatsapp img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
 
 /* Кнопка "Написать e-mail" */
 
