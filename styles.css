@@ -295,6 +295,21 @@ img {
   object-fit: cover;
 }
 
+/* МАЛЕНЬКИЕ ПРЕВЬЮ ДЛЯ СЕРВИС-КАТЕГОРИЙ
+   (Umbau von Seecontainern, Kioske & Verkaufsstände,
+    Metallbau & kleine Umbauten) */
+.service-thumb {
+  max-height: 150px;        /* можно увеличить/уменьшить при желании */
+  margin-bottom: 10px;
+}
+
+.service-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
 .card-title {
   font-size: 16px;
   font-weight: 600;
@@ -363,6 +378,7 @@ img {
 .contact-list a:hover {
   border-bottom-style: solid;
 }
+
 .contact-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -464,6 +480,8 @@ img {
   .page-wrap {
     padding-inline: 14px;
   }
+}
+
 /* =========================
    ПРОЕКТ-СТРАНИЦЫ (ГАЛЕРЕЯ + ВИДЕО)
    ========================= */
@@ -572,7 +590,7 @@ img {
     height: 220px;
   }
 }
-}
+
 /* ======================
    Lightbox für Galerien
    ====================== */
