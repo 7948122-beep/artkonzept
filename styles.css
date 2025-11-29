@@ -307,7 +307,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 60%;  /* чуть вниз – меньше неба, больше здания */
+  object-position: center 85%;  /* чуть вниз – меньше неба, больше здания */
   border-radius: 14px;
   display: block;
 }
