@@ -305,10 +305,10 @@ img {
 }
 
 .service-thumb img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;
-  object-position: center 85%; /* сильнее смещаем вниз, чтобы меньше неба было */
+  object-position: center 80%; /* сильнее смещаем вниз, чтобы меньше неба было */
   border-radius: 14px;
   display: block;
 }
