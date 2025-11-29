@@ -283,6 +283,8 @@ img {
   border-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Общие превью в карточках */
+
 .card-image {
   border-radius: 14px;
   overflow: hidden;
@@ -295,7 +297,16 @@ img {
   object-fit: cover;
 }
 
-/* Текст карточек */
+/* МАЛЕНЬКИЕ ПОДРЕЗКИ СПЕЦИАЛЬНО ДЛЯ КАТЕГОРИЙ
+   (Container-Umbau & Kioske, Metallbau & kleine Umbauten) */
+
+.card-image--low img {
+  object-position: center 80%;   /* сильнее вниз – меньше неба */
+}
+
+.card-image--mid img {
+  object-position: center 70%;   /* чуть вниз – мягче для киоска */
+}
 
 .card-title {
   font-size: 16px;
