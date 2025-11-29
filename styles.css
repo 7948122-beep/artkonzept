@@ -298,21 +298,21 @@ img {
 /* МАЛЕНЬКИЕ ПРЕВЬЮ ДЛЯ СЕРВИС-КАТЕГОРИЙ
    (Umbau von Seecontainern, Kioske & Verkaufsstände,
     Metallbau & kleine Umbauten) */
+
 .service-thumb {
-  max-height: 150px;        /* можно увеличить/уменьшить при желании */
+  height: 130px;            /* фиксированная высота превью */
   margin-bottom: 10px;
-  overflow: hidden;         /* чтобы ничего не вылазило за рамку */
+  overflow: hidden;         /* чтобы картинка не вылезала за рамку */
 }
 
 .service-thumb img {
   width: 100%;
-  height: 80%;
-  object-fit: cover;
-  object-position: center 50%; /* сильнее смещаем вниз, чтобы меньше неба было */
+  height: 100%;
+  object-fit: cover;        /* заполняем весь блок с обрезкой */
+  object-position: center 70%; /* немного смещаем вниз – меньше неба */
   border-radius: 14px;
   display: block;
 }
-
 
 .card-title {
   font-size: 16px;
@@ -458,6 +458,10 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  .service-thumb {
+    height: 120px;          /* чуть ниже на планшетах */
+  }
 }
 
 @media (max-width: 640px) {
@@ -483,6 +487,10 @@ img {
 
   .page-wrap {
     padding-inline: 14px;
+  }
+
+  .service-thumb {
+    height: 110px;          /* на телефоне ещё компактнее */
   }
 }
 
