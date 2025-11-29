@@ -298,23 +298,21 @@ img {
 /* МАЛЕНЬКИЕ ПРЕВЬЮ ДЛЯ КАТЕГОРИЙ
    (Container-Umbau & Kioske, Metallbau & kleine Umbauten) */
 
-/* сама картинка в карточках-категориях */
 .service-card .card-image {
-  max-height: 170px;        /* примерно как у обычных карточек, можно 160–190 */
+  max-height: 170px;        /* высота почти как у основных карточек */
   overflow: hidden;
 }
 
-/* как обрезаем изображение внутри */
 .service-card .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 70%;  /* смещаем немного вниз – меньше неба, больше здания */
+  object-position: center 70%;  /* чуть вниз – меньше неба, больше здания */
   border-radius: 14px;
   display: block;
 }
 
-}
+/* Текст карточек */
 
 .card-title {
   font-size: 16px;
@@ -460,10 +458,6 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-
-  .service-thumb {
-    height: 120px;          /* чуть ниже на планшетах */
-  }
 }
 
 @media (max-width: 640px) {
@@ -489,10 +483,6 @@ img {
 
   .page-wrap {
     padding-inline: 14px;
-  }
-
-  .service-thumb {
-    height: 110px;          /* на телефоне ещё компактнее */
   }
 }
 
@@ -648,7 +638,7 @@ img {
   padding: 8px 12px;
 }
 
-.lightbox-close {
+lightbox-close {
   top: 16px;
   right: 20px;
 }
