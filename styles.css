@@ -316,7 +316,7 @@ img {
 }
 
 .card-image--mid img {
-  object-position: center 65%;   /* киоск и блоки металлоконструкций */
+  object-position: center 55%;   /* киоск и блоки металлоконструкций */
 }
 
 .card-title {
