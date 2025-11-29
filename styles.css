@@ -295,23 +295,25 @@ img {
   object-fit: cover;
 }
 
-/* МАЛЕНЬКИЕ ПРЕВЬЮ ДЛЯ СЕРВИС-КАТЕГОРИЙ
-   (Umbau von Seecontainern, Kioske & Verkaufsstände,
-    Metallbau & kleine Umbauten) */
+/* МАЛЕНЬКИЕ ПРЕВЬЮ ДЛЯ КАТЕГОРИЙ
+   (Container-Umbau & Kioske, Metallbau & kleine Umbauten) */
 
-.service-thumb {
-  height: 150px;            /* фиксированная высота превью */
-  margin-bottom: 10px;
-  overflow: hidden;         /* чтобы картинка не вылезала за рамку */
+/* сама картинка в карточках-категориях */
+.service-card .card-image {
+  max-height: 170px;        /* примерно как у обычных карточек, можно 160–190 */
+  overflow: hidden;
 }
 
-.service-thumb img {
+/* как обрезаем изображение внутри */
+.service-card .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* заполняем весь блок с обрезкой */
-  object-position: center 85%; /* немного смещаем вниз – меньше неба */
+  object-fit: cover;
+  object-position: center 70%;  /* смещаем немного вниз – меньше неба, больше здания */
   border-radius: 14px;
   display: block;
+}
+
 }
 
 .card-title {
