@@ -301,16 +301,18 @@ img {
 .service-thumb {
   max-height: 150px;        /* можно увеличить/уменьшить при желании */
   margin-bottom: 10px;
+  overflow: hidden;         /* чтобы ничего не вылазило за рамку */
 }
 
-.service-thumb img {
 .service-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 80%; /* сдвиг вниз */
+  object-position: center 85%; /* сильнее смещаем вниз, чтобы меньше неба было */
   border-radius: 14px;
+  display: block;
 }
+
 
 .card-title {
   font-size: 16px;
