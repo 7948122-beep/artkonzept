@@ -304,9 +304,11 @@ img {
 }
 
 .service-thumb img {
+.service-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 80%; /* сдвиг вниз */
   border-radius: 14px;
 }
 
