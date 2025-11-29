@@ -283,29 +283,40 @@ img {
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Общие превью в карточках */
+/* ОБЩИЕ ПРЕВЬЮ В КАРТОЧКАХ
+   высоту можно менять — это влияет на обрезку */
 
 .card-image {
   border-radius: 14px;
   overflow: hidden;
-  max-height: 190px;
+  height: 190px;          /* ГЛАВНЫЕ ПРОЕКТЫ (4 модуля, 3 ремонта) */
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center; /* по центру по умолчанию */
 }
 
-/* МАЛЕНЬКИЕ ПОДРЕЗКИ СПЕЦИАЛЬНО ДЛЯ КАТЕГОРИЙ
-   (Container-Umbau & Kioske, Metallbau & kleine Umbauten) */
+/* СПЕЦИАЛЬНЫЕ ПРЕВЬЮ ДЛЯ КАТЕГОРИЙ
+   (Container-Umbau & Kioske, Metallbau & kleine Umbauten)
+   Здесь можно регулировать И высоту, И сдвиг по вертикали. */
 
+/* высота превью категорий */
+.card-image--low,
+.card-image--mid {
+  height: 170px;          /* сделаны чуть ниже, можно поставить 160 / 180 / 190 */
+}
+
+/* сдвиг картинки по вертикали:
+   больше процент = сильнее вниз = МЕНЬШЕ НЕБА */
 .card-image--low img {
-  object-position: center 50%;   /* сильнее вниз – меньше неба */
+  object-position: center 80%;   /* склад / серый контейнер: меньше неба, больше здания */
 }
 
 .card-image--mid img {
-  object-position: center 60%;   /* чуть вниз – мягче для киоска */
+  object-position: center 70%;   /* киоск и блоки металлоконструкций */
 }
 
 .card-title {
