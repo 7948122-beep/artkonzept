@@ -309,7 +309,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;        /* заполняем весь блок с обрезкой */
-  object-position: center 70%; /* немного смещаем вниз – меньше неба */
+  object-position: center 85%; /* немного смещаем вниз – меньше неба */
   border-radius: 14px;
   display: block;
 }
