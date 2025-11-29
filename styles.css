@@ -301,11 +301,11 @@ img {
    (Container-Umbau & Kioske, Metallbau & kleine Umbauten) */
 
 .card-image--low img {
-  object-position: center 100%;   /* сильнее вниз – меньше неба */
+  object-position: center 50%;   /* сильнее вниз – меньше неба */
 }
 
 .card-image--mid img {
-  object-position: center 100%;   /* чуть вниз – мягче для киоска */
+  object-position: center 60%;   /* чуть вниз – мягче для киоска */
 }
 
 .card-title {
