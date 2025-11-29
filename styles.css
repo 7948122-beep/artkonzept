@@ -299,7 +299,7 @@ img {
    (Umbau von Seecontainern, Kioske & Verkaufsstände,
     Metallbau & kleine Umbauten) */
 .service-thumb {
-  max-height: 150px;        /* можно увеличить/уменьшить при желании */
+  max-height: 100px;        /* можно увеличить/уменьшить при желании */
   margin-bottom: 10px;
   overflow: hidden;         /* чтобы ничего не вылазило за рамку */
 }
