@@ -665,3 +665,159 @@ img {
 .lightbox-arrow:focus {
   outline: none;
 }
+/* ===================== BLOG ===================== */
+
+.blog-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.blog-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-header p {
+  max-width: 700px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Крупная карточка сверху */
+.blog-featured {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Общий вид карточек (по умолчанию – мобильный вид) */
+.blog-card {
+  display: flex;
+  flex-direction: row-reverse; /* картинка справа */
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  gap: 1rem;
+}
+
+.blog-card-featured {
+  padding: 2rem;
+}
+
+.blog-card-image {
+  flex: 0 0 120px;
+  max-width: 150px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card-content {
+  flex: 1;
+}
+
+.blog-card-meta {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #999;
+}
+
+.blog-card-title {
+  font-size: 1.1rem;
+  margin: 0.4rem 0 0.4rem;
+}
+
+.blog-card-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid #222;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  display: inline-block;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.blog-card-link:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* Фильтры */
+.blog-filters {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.blog-filter-button {
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.blog-filter-button.active {
+  border-color: #222;
+  background: #222;
+  color: #fff;
+}
+
+/* Список карточек (нижние статьи) */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.blog-card.hidden {
+  display: none;
+}
+
+/* Десктопная раскладка – 3 колонки */
+@media (min-width: 900px) {
+  .blog-page {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .blog-featured {
+    margin-bottom: 3rem;
+  }
+
+  .blog-card {
+    flex-direction: column; /* картинка сверху, текст снизу */
+  }
+
+  .blog-card-image {
+    flex: 0 0 auto;
+    max-width: 100%;
+    height: 180px;
+    margin-bottom: 1rem;
+  }
+
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.8rem;
+  }
+}
