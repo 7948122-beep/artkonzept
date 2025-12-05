@@ -124,3 +124,115 @@
             <h2 class="blog-card-title">
               Holz-Gartenhaus: Wie schützt man es richtig vor Wetter?
             </h2>
+            <p class="blog-card-excerpt">
+              Lasuren, Deckfarben oder Öl? Wir erklären, wie Sie Ihr Gartenhaus
+              gegen Regen, Sonne und Schmutz schützen.
+            </p>
+            <a href="blog/gartenhaus-holzschutz.html" class="blog-card-link">Weiterlesen</a>
+          </div>
+        </article>
+
+        <!-- КАРТОЧКА 4 -->
+        <article class="blog-card" data-category="metall werkzeuge">
+          <div class="blog-card-image">
+            <img src="img/blog/metall-winkelschleifer.jpg" alt="Winkelschleifer Metallarbeiten">
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-meta">Metallbau &amp; Schweissen · 15.11.2025</span>
+            <h2 class="blog-card-title">
+              Winkelschleifer für Metall: Scheibenarten und Sicherheit
+            </h2>
+            <p class="blog-card-excerpt">
+              Welche Scheibe wofür, worauf achten bei Schutz und Drehzahl –
+              ein kurzer Praxis-Überblick für saubere Metallarbeiten.
+            </p>
+            <a href="blog/winkelschleifer-metall-tipps.html" class="blog-card-link">Weiterlesen</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- КОНТАКТЫ + О НАС -->
+      <section id="kontakt" class="footer-section">
+        <div class="footer-grid">
+          <div>
+            <h2 class="footer-title">Kontakt &amp; Projektidee</h2>
+            <p class="footer-subtitle">
+              Haben Sie Interesse an einem Projekt im Bereich Modulbau, Renovation oder Metallbau?
+            </p>
+            <p class="footer-text">
+              Schicken Sie uns eine kurze Beschreibung (Nutzung, Grösse, Budget)
+              und gerne auch ein paar Fotos vom Standort. Wir schlagen Ihnen eine
+              passende Lösung vor.
+            </p>
+            <a class="btn-email" href="mailto:7948122@gmail.com?subject=Anfrage%20Karpov%20Baukonzept">
+              E-MAIL SCHREIBEN
+            </a>
+          </div>
+
+          <div>
+            <h3 class="section-title" style="font-size:18px; letter-spacing:0.12em;">Über Karpov Baukonzept</h3>
+            <p class="footer-text" style="margin-bottom:10px;">
+              Karpov Baukonzept verbindet Metallbau, Holzbau, Renovation und Modulbau.
+              Viele der gezeigten Projekte wurden komplett geplant, gefertigt
+              und montiert – aus einer Hand.
+            </p>
+            <ul class="contact-list">
+              <li>Inhaber: Artem Karpov</li>
+              <li>Telefon: <a href="tel:+41798467831">+41 79 846 78 31</a></li>
+              <li>
+                <a class="contact-whatsapp" href="https://wa.me/41798467831" target="_blank" rel="noopener">
+                  <img src="img/whatsapp-icon.png" alt="WhatsApp" />
+                  WhatsApp: +41 79 846 78 31
+                </a>
+              </li>
+              <li>E-Mail: <a href="mailto:7948122@gmail.com">7948122@gmail.com</a></li>
+              <li>Region: Kanton Zürich und Umgebung</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © <span id="year"></span> Karpov Baukonzept
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Год в подвале -->
+  <script>
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+
+  <!-- ФИЛЬТРЫ БЛОГА -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.blog-filter-button');
+      const cards = document.querySelectorAll('.blog-list .blog-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter; // z.B. "malen", "beton", "alle"
+
+          // активная кнопка
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          // показываем / скрываем карточки
+          cards.forEach(card => {
+            const categories = card.dataset.category.split(' '); // массив категорий
+            if (filter === 'alle' || categories.includes(filter)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- Скрипт галереи (как на других страницах, если нужен) -->
+  <script src="gallery.js"></script>
+</body>
+</html>
