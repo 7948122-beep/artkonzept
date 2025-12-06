@@ -78,7 +78,7 @@
         <button class="blog-filter-button" data-filter="werkzeuge">Werkzeuge &amp; Praxis-Tipps</button>
       </section>
 
-           <!-- Список остальных статей -->
+      <!-- Список остальных статей -->
       <section class="blog-list">
 
         <!-- КАРТОЧКА 1: Malen & Spachteln -->
@@ -315,6 +315,46 @@
           </div>
         </article>
 
+        <!-- КАРТОЧКА 14: Innenfarben für Wände (НОВАЯ) -->
+        <article class="blog-card" data-category="malen">
+          <div class="blog-card-image">
+            <img src="img/blog/innenfarben-rollen-und-eimer.jpg"
+                 alt="Innenwand mit Malerrolle und Farbeimer beim Streichen">
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-meta">Malen &amp; Spachteln · 30.11.2025</span>
+            <h2 class="blog-card-title">
+              Innenfarben für Wände: Welche Farbe eignet sich für welches Zimmer?
+            </h2>
+            <p class="blog-card-excerpt">
+              Dispersionsfarbe, Latexfarbe oder Silikatfarbe – welche Innenfarbe passt
+              ins Wohnzimmer, Bad, Küche oder Treppenhaus? Wir erklären die wichtigsten
+              Unterschiede und typische Fehler.
+            </p>
+            <a href="blog/innenfarben-fuer-waende.html" class="blog-card-link">Weiterlesen</a>
+          </div>
+        </article>
+
+        <!-- КАРТОЧКА 15: Dampfsperre & Feuchteschutz (НОВАЯ) -->
+        <article class="blog-card" data-category="trockenbau">
+          <div class="blog-card-image">
+            <img src="img/blog/dampfsperre-wand-einbau.jpg"
+                 alt="Einbau einer Dampfbremse im Holzständerbau">
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-meta">Trockenbau &amp; Innenausbau · 01.12.2025</span>
+            <h2 class="blog-card-title">
+              Dampfsperre &amp; Feuchteschutz: Was man beim Bauen unbedingt beachten muss
+            </h2>
+            <p class="blog-card-excerpt">
+              Wann braucht man eine Dampfsperre, wann eine Dampfbremse? Und wie verhindert
+              man Schimmel, nasse Dämmung und Kondenswasser in Wänden und Decken? Ein
+              praxisnaher Überblick.
+            </p>
+            <a href="blog/dampfsperre-und-feuchteschutz.html" class="blog-card-link">Weiterlesen</a>
+          </div>
+        </article>
+
       </section>
 
       <!-- КОНТАКТЫ + О НАС -->
@@ -378,15 +418,13 @@
 
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-          const filter = button.dataset.filter; // z.B. "malen", "beton", "alle"
+          const filter = button.dataset.filter;
 
-          // активная кнопка
           filterButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
 
-          // показываем / скрываем карточки
           cards.forEach(card => {
-            const categories = card.dataset.category.split(' '); // массив категорий
+            const categories = card.dataset.category.split(' ');
             if (filter === 'alle' || categories.includes(filter)) {
               card.classList.remove('hidden');
             } else {
@@ -398,7 +436,6 @@
     });
   </script>
 
-  <!-- Скрипт галереи (как на других страницах, если нужен) -->
   <script src="gallery.js"></script>
 </body>
 </html>
